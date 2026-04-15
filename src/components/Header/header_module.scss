@@ -1,0 +1,23 @@
+.header {
+  background-color: var(--white-900);
+
+  .container {
+    height: 64px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header_navContainer {
+      display: flex;
+
+      .header_logo {
+        padding-right: clamp(1.25rem, 1rem + 1.1111vw, 2rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+  }
+}

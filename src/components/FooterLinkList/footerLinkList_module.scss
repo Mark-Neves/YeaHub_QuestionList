@@ -1,0 +1,6 @@
+.footer_linkList {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.25rem, 0.1667rem + 0.3704vw, 0.5rem);
+}

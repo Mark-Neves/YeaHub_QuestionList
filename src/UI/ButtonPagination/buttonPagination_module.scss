@@ -1,0 +1,39 @@
+.pagination-button {
+  margin-inline: 10px;
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--purple_700);
+
+  .question-svg {
+    position: absolute;
+    width: 15px;
+    top: 0px;
+  }
+  &:hover {
+    background-color: var(--purple_700);
+    .question-svg {
+      fill: var(--white-900);
+    }
+  }
+}
+
+.button-prev {
+  .question-svg {
+    left: 6px;
+    transform: rotate(270deg);
+  }
+}
+.button-next {
+  .question-svg {
+    left: 4px;
+    transform: rotate(90deg);
+  }
+}
+.disabled {
+  border-color: var(--grey-200);
+  .question-svg {
+    fill: var(--grey-200);
+  }
+}

@@ -1,0 +1,13 @@
+.breadcrumbs {
+  padding-block: 25px;
+  color: var(--purple_700);
+  font-size: 14px;
+  &_text {
+    cursor: default;
+  }
+  &_link {
+    &:hover {
+      color: var(--purple_800);
+    }
+  }
+}

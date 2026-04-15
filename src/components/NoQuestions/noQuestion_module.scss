@@ -1,0 +1,27 @@
+.no-questions-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    .title {
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+
+  .reset-filter {
+    padding-inline: 20px;
+    width: 200px;
+    height: 48px;
+    border: 1px solid var(--purple_700);
+    color: var(--purple_700);
+    border-radius: var(--radius-l);
+  }
+}

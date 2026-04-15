@@ -1,0 +1,25 @@
+.answer-container-code {
+  overflow: hidden;
+  p {
+    margin-bottom: 16px;
+  }
+
+  code {
+    background-color: var(--code);
+    padding: 2px 6px;
+    border-radius: 6px;
+    line-height: 1.4;
+    white-space: pre-line;
+  }
+
+  pre {
+    background-color: var(--code);
+    padding: 12px;
+    border-radius: var(--radius-l);
+  }
+
+  strong {
+    font-size: 17px;
+    color: var(--black-800);
+  }
+}

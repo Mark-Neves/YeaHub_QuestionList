@@ -1,0 +1,32 @@
+.error {
+  margin: auto;
+  border-radius: var(--radius-xxl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1rem, 0.9171rem + 0.3687vw, 1.25rem);
+
+  &-title {
+    padding-top: 10px;
+    font-size: clamp(1.125rem, 1.0006rem + 0.553vw, 1.5rem);
+    font-weight: 600;
+    text-align: center;
+  }
+  &-description {
+    text-align: center;
+    font-size: clamp(0.875rem, 0.7921rem + 0.3687vw, 1.125rem);
+  }
+  &-link {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(0.875rem, 0.8335rem + 0.1843vw, 1rem);
+    padding-inline: clamp(0.875rem, 0.7506rem + 0.553vw, 1.25rem);
+    width: clamp(6.25rem, 4.1763rem + 9.2166vw, 12.5rem);
+    height: 48px;
+    border: 1px solid var(--purple_700);
+    color: var(--purple_700);
+    border-radius: var(--radius-l);
+  }
+}
