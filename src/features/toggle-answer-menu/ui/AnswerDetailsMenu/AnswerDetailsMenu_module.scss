@@ -1,0 +1,11 @@
+.header-button {
+  padding: 8px;
+  background-color: inherit;
+  border: none;
+  border-radius: var(--radius-l);
+  display: flex;
+  align-items: center;
+  &:hover {
+    background-color: var(--backgroung);
+  }
+}

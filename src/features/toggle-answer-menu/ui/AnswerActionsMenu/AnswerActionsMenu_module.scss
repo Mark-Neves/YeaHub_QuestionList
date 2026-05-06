@@ -1,0 +1,21 @@
+.ditalies {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  padding: 10px;
+  background-color: var(--white-900);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--radius-l);
+  &-item {
+    padding: 6px 10px;
+    border-radius: var(--radius-l);
+    &__button {
+      &:hover {
+        color: var(--purple_700);
+      }
+    }
+    &:hover {
+      background-color: var(--backgroung);
+    }
+  }
+}

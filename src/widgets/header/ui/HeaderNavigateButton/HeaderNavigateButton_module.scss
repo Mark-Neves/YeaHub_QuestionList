@@ -1,0 +1,18 @@
+.select_button {
+  display: none;
+  position: relative;
+
+  padding: 5px;
+  background-color: inherit;
+  border: none;
+  color: var(--text-black);
+  @media (max-width: 1230px) {
+    display: block;
+  }
+}
+
+.header-nav-mobile {
+  position: absolute;
+  top: 8px;
+  right: -15px;
+}

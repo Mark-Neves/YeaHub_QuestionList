@@ -1,0 +1,22 @@
+.header-filter {
+  display: flex;
+  align-items: start;
+  gap: clamp(0.875rem, 0.6676rem + 0.9217vw, 1.5rem);
+
+  .filter {
+    padding: 6px 10px;
+    border-radius: var(--radius-m);
+    font-size: clamp(0.75rem, 0.7083rem + 0.1852vw, 0.875rem);
+    font-weight: 600;
+    background-color: var(--backgroung);
+
+    &-action {
+      margin-left: 8px;
+      padding: 2px 4px;
+      border-radius: var(--radius-s);
+      border-color: var(--purple_700);
+      background-color: var(--purple_700);
+      color: var(--white-900);
+    }
+  }
+}
