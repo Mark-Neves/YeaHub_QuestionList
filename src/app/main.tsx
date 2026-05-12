@@ -7,5 +7,3 @@ createRoot(document.getElementById('root')!).render(
     <App />
   </StrictMode>,
 );
-
-//нормализация данных или подумать как сделать переключение вопросов последовательным
