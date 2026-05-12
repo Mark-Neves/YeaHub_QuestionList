@@ -1,6 +1,6 @@
 import ContentLoader from 'react-content-loader';
 
-export function SceletonFilterList() {
+export default function SceletonFilterList() {
   return (
     <ContentLoader
       speed={2}

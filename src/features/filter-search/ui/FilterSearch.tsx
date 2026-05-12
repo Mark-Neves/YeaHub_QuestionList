@@ -3,8 +3,12 @@ import type { FilterSearchProps } from '../model/types';
 import Button from '@/shared/ui/Button';
 import { useFilterSearch } from '../model/useFilterSearch';
 
-export default function FilterSearch({ text, updateSearch }: FilterSearchProps) {
-  const { value, handleChange, clearFilter } = useFilterSearch({ text, updateSearch });
+export default function FilterSearch({ text, updateSearch, isCollection }: FilterSearchProps) {
+  const { value, handleChange, clearFilter } = useFilterSearch({
+    text,
+    updateSearch,
+    isCollection,
+  });
 
   return (
     <>

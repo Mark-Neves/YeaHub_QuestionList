@@ -4,7 +4,7 @@ import useUpdateUrl from '@/features/update-url';
 export default function NoQuestions() {
   const { resetFilter } = useUpdateUrl();
   return (
-    <div className='no-questions-container responsive-width-body'>
+    <div className='no-questions-container'>
       <img src='/noQuestions.svg' alt='Пустой список вопросов' loading='lazy' />
       <div className='text'>
         <h3 className='title'>К сожалению, по запросу ничего не найденно.</h3>

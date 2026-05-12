@@ -5,7 +5,6 @@ import type { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 export type Children = {
   children: ReactNode;
 };
-export type URLParams = 'specializationId' | 'skills' | 'complexity' | 'rate' | 'page' | 'title';
 
 export interface ApiResponse<T> {
   data: T;
@@ -42,6 +41,10 @@ export interface Complexity {
 export interface Rate {
   title: string;
   level: number;
+}
+export interface Access {
+  title: string;
+  level: string;
 }
 
 export interface LinkList {

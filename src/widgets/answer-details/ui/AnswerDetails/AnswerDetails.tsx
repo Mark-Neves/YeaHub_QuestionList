@@ -1,16 +1,25 @@
 import './AnswerDetails_module.scss';
-import type { AnswerWithAction } from '@/entity/answer/model/types';
 
-import AnswerDetailsHeader from '../AnswerDetailsHeader/AnswerDetailsHeader';
 import AnswerNavigate from '@/features/answer-navigate';
 import { AnswerShort } from '@/entity/answer';
 import AnswerExpandable from '@/features/answer-expandable';
+import type { AnswerDetails } from '@/entity/answer/model/types';
+import DetailsHeader from '@/shared/ui/DetailsHeader';
 
-export default function AnswerDetails({ answer, onClick }: AnswerWithAction) {
+type AnswerDetailsProps = {
+  answer: AnswerDetails;
+  onClick: () => void;
+};
+export default function AnswerDetails({ answer, onClick }: AnswerDetailsProps) {
   const { id, title, description, shortAnswer, longAnswer } = answer;
   return (
     <div className='details'>
-      <AnswerDetailsHeader title={title} description={description} onClick={onClick} />
+      <DetailsHeader
+        title={title}
+        description={description}
+        imgUrl={'/detailsLogo.png'}
+        onClick={onClick}
+      />
       <AnswerNavigate currentId={id} />
       <AnswerShort answer={shortAnswer} />
       <AnswerExpandable answer={longAnswer} />

@@ -1,0 +1,21 @@
+.loader {
+  margin: auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--white-900);
+  border-radius: var(--radius-xxl);
+  &__svg {
+    animation: spin 1.5s linear infinite;
+    transform-origin: center;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

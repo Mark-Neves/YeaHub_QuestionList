@@ -1,5 +1,7 @@
 import { baseApi } from '@/shared/api/baseApi';
-import { normalizeData, SPECIALIZATION_LIMIT, SPECIALIZATION_PAGE } from '@/shared/helpers';
+import { SPECIALIZATION_LIMIT, SPECIALIZATION_PAGE } from '@/shared/lib/constants';
+import { normalizeData } from '@/shared/lib/normalize';
+
 import type { ApiResponse, Specialization } from '@/shared/model/type';
 
 const specializationApi = baseApi.injectEndpoints({

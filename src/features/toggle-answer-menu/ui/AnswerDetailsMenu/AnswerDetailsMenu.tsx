@@ -1,6 +1,7 @@
 import './AnswerDetailsMenu_module.scss';
 import { AnswerActionsMenu } from '@/features/toggle-answer-menu';
 import { useToggle } from '@/shared/lib';
+import useCollectionContext from '@/shared/lib/collection-context/useCollectionContext';
 import Button from '@/shared/ui/Button';
 import { AnswerButtonSvg } from '@/shared/ui/Icon';
 
@@ -9,6 +10,11 @@ type AnswerDetailsMenuProps = {
 };
 export default function AnswerDetailsMenu({ answerId }: AnswerDetailsMenuProps) {
   const { state: isOpenDetails, toggle: toggleDetails, toggleOff } = useToggle(false);
+  const collection = useCollectionContext();
+  const collectionId = collection?.collectionId;
+  const to = collectionId
+    ? `/collections/${collectionId}/questions/${answerId}`
+    : `/questions/${answerId}`;
 
   return (
     <>
@@ -16,7 +22,7 @@ export default function AnswerDetailsMenu({ answerId }: AnswerDetailsMenuProps) 
         <AnswerButtonSvg />
       </Button>
 
-      {isOpenDetails && <AnswerActionsMenu answerId={answerId} closeMenu={toggleOff} />}
+      {isOpenDetails && <AnswerActionsMenu to={to} closeMenu={toggleOff} />}
     </>
   );
 }

@@ -1,7 +1,7 @@
 import './PaginationList_module.scss';
 import type { usePaginationReturn } from '@/features/pagination-question/model/types';
 import Button from '@/shared/ui/Button';
-import { getPaginationRange } from '../../model/helpers';
+import { getPaginationRange } from '../../model/paginationHelpers';
 type PaginationListProps = Pick<usePaginationReturn, 'currentPage' | 'totalPage' | 'goTo'>;
 
 export function PaginationList({ currentPage, totalPage, goTo }: PaginationListProps) {

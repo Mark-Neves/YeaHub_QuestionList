@@ -1,0 +1,15 @@
+.no-collection {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xxl);
+  gap: 20px;
+  background-color: var(--white-900);
+  &__text {
+    color: var(--black-700);
+    font-weight: 600;
+    font-size: 18px;
+  }
+}

@@ -1,4 +1,7 @@
+import type { NameParamsType } from '@/features/update-url/model/typeParams';
+
 export type FilterSearchProps = {
-  text: string | null;
-  updateSearch: (name: string, value: string) => void;
+  text: string | null | undefined;
+  updateSearch: (name: NameParamsType, value: string) => void;
+  isCollection?: boolean;
 };

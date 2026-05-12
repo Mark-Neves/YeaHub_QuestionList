@@ -4,7 +4,7 @@ import { useToggle } from '@/shared/lib/hooks/useToggle';
 import Button from '@/shared/ui/Button';
 import type { FilterListProps } from '../../model/type';
 type FilterContentProps<T> = Omit<FilterListProps<T>, 'title' | 'body'> & { filters: T[] };
-export function FilterListContent<T>({
+export default function FilterListContent<T>({
   filters,
   isActive,
   getLabel,
@@ -19,8 +19,8 @@ export function FilterListContent<T>({
         {filters.map((option) => {
           const value = getValue(option);
           const isActiveItem = Array.isArray(value)
-            ? value.every((el) => isActive.includes(el))
-            : isActive.includes(value);
+            ? value.every((el) => isActive.includes(String(el)))
+            : isActive.includes(String(value));
 
           const handleClick = () => {
             onSelect(String(value));

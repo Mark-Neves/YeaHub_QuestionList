@@ -2,9 +2,9 @@ import { useDebounce } from '@/shared/lib';
 import { useEffect, useState } from 'react';
 import type { FilterSearchProps } from './types';
 
-export const useFilterSearch = ({ text, updateSearch }: FilterSearchProps) => {
+export const useFilterSearch = ({ text, updateSearch, isCollection }: FilterSearchProps) => {
   const searchText = (inputText: string): void => {
-    updateSearch('title', inputText.trim());
+    updateSearch(isCollection ? 'titleOrDescriptionSearch' : 'title', inputText.trim());
   };
 
   const [value, setValue] = useState(text ?? '');

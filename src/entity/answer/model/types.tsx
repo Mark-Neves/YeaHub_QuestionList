@@ -18,8 +18,3 @@ export interface AnswerDetails extends AnswerBasa {
 export interface AnswerProps {
   answer: string;
 }
-
-export type AnswerWithAction = {
-  answer: AnswerDetails;
-  onClick: () => void;
-};

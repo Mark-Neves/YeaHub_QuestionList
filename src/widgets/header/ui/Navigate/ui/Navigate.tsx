@@ -4,7 +4,7 @@ import './Navigate_module.scss';
 
 import { useNavigate } from '../model/useNavigate';
 import { HeaderNavigateButton } from '../../HeaderNavigateButton';
-import { navList } from '../model/helpers';
+import { navList } from '../model/helpersHeader';
 
 export function Navigate() {
   const { isOpen, toggle, toggleOff, buttonRef, navListRef } = useNavigate();

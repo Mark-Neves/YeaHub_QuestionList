@@ -1,5 +1,6 @@
 import { baseApi } from '@/shared/api/baseApi';
-import { normalizeData } from '@/shared/helpers';
+import { normalizeData } from '@/shared/lib/normalize';
+
 import type { ApiResponse, Skill } from '@/shared/model/type';
 
 const DEFAULT_SPECIALIZATION_ID = 11;

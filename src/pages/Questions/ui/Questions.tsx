@@ -1,19 +1,23 @@
-import { useToggle } from '@/shared/lib/hooks/useToggle';
-import { useQuestionPage } from '../model/useQuestionPage';
-
 import QuestionSection from '@/widgets/question-section';
 import FilterSection from '@/widgets/filter-section';
 import Sidebar from '@/widgets/sidebar';
 
+import { useGetQuestionQuery } from '@/entity/question/api/questionApi';
+import useUpdateUrl from '@/features/update-url';
+import { useToggle } from '@/shared/lib';
+
 export default function Questions() {
-  const { state: isFilterHidden, toggleOn: filterClose, toggleOff: filterOpen } = useToggle(true);
-  const { filters } = useQuestionPage();
+  const { params } = useUpdateUrl();
+  const { state: isFilterHidden, toggleOn, toggleOff } = useToggle(true);
+
+  const { data: questions, isFetching, error } = useGetQuestionQuery(params);
+  const dataQuestions = { data: questions, isLoading: isFetching, error };
 
   return (
     <>
-      <QuestionSection filters={filters} filterOpen={filterOpen} />
-      <Sidebar isHidden={isFilterHidden} filterClose={filterClose}>
-        <FilterSection filterClose={filterClose} filters={filters} />
+      <QuestionSection filterOpen={toggleOff} questionData={dataQuestions} />
+      <Sidebar isHidden={isFilterHidden} filterClose={toggleOn}>
+        <FilterSection />
       </Sidebar>
     </>
   );

@@ -1,11 +1,8 @@
-import type { Specialization, URLParams } from '@/shared/model/type';
+import type { Specialization } from '@/shared/model/type';
 
-export type GetQuestionParams = Partial<Record<URLParams, string>>;
+type URLQuestionParams = 'specializationId' | 'skills' | 'complexity' | 'rate' | 'page' | 'title';
 
-export type QuestionSectionProps = {
-  filters: GetQuestionParams;
-  filterOpen: () => void;
-};
+export type GetQuestionParams = Partial<Record<URLQuestionParams, string>>;
 
 export type QuestionBasa = {
   id: number;
@@ -17,4 +14,5 @@ export interface QuestionItemProps extends QuestionBasa {
   complexity: number;
   shortAnswer: string;
   questionSpecializations?: Specialization[];
+  keywords?: string[];
 }

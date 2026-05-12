@@ -8,6 +8,8 @@
 
   &-description {
     display: flex;
+    justify-content: space-between;
+
     align-self: flex-start;
     .title {
       color: var(--black-800);

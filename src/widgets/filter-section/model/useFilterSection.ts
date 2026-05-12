@@ -1,8 +1,11 @@
 import { useGetSkillsQuery } from '@/entity/skill/api/skillsApi';
 import { useGetSpecializationQuery } from '@/entity/specialization/api/specializationApi';
-import type { Filters } from '@/entity/specialization/model/type';
+import useUpdateUrl from '@/features/update-url';
+import { DEFAULT_SPECIALIZATION_ID } from '@/shared/lib/constants';
 
-export function useFilterSection(filters: Filters) {
+export function useFilterSection() {
+  const { params } = useUpdateUrl();
+
   const {
     data: specialization,
     isLoading: isLoadingSpecialization,
@@ -18,7 +21,7 @@ export function useFilterSection(filters: Filters) {
     data: skills,
     isFetching: isLoadingSkills,
     error: errorSkills,
-  } = useGetSkillsQuery(filters.specializationId);
+  } = useGetSkillsQuery(params.specializationId ?? DEFAULT_SPECIALIZATION_ID);
   const skillsState = {
     data: skills,
     isLoading: isLoadingSkills,
@@ -26,7 +29,7 @@ export function useFilterSection(filters: Filters) {
   };
 
   const hasActiveFilters = Boolean(
-    filters.rate?.length || filters.complexity?.length || filters.skills?.length,
+    params.rate?.length || params.complexity?.length || params.skills?.length,
   );
   return { specializationsState, skillsState, hasActiveFilters };
 }

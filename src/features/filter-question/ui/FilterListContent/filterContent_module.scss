@@ -3,13 +3,6 @@
   gap: 8px;
   flex-wrap: wrap;
 
-  .filter-item {
-    display: inline;
-    background-color: inherit;
-    border: 1px solid var(--grey-200);
-    border-radius: var(--radius-l);
-    padding: 8px 12px;
-  }
   :hover {
     border-radius: var(--radius-l);
     border-color: var(--purple_700);

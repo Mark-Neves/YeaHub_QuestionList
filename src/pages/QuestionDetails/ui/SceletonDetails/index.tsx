@@ -1,6 +1,6 @@
 import ContentLoader from 'react-content-loader';
 
-export const SceletonDetails = () => {
+export default function SceletonDetails() {
   return (
     <ContentLoader
       speed={2}
@@ -16,4 +16,4 @@ export const SceletonDetails = () => {
       <rect x='6' y='319' rx='20' ry='20' width='817' height='325' />
     </ContentLoader>
   );
-};
+}

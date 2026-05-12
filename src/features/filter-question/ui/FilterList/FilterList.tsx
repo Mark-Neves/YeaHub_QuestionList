@@ -1,8 +1,8 @@
 import './filterList_module.scss';
 
 import DataBoundary from '@/shared/ui/DataBoundary';
-import { FilterListContent } from '../FilterListContent/FilterListContent';
-import { SceletonFilterList } from '../FilterListContent/SceletonFilterList';
+import FilterListContent from '../FilterListContent/FilterListContent';
+import SceletonFilterList from '../FilterListContent/SceletonFilterList';
 import type { FilterListProps } from '../../model/type';
 
 export default function FilterList<T>({

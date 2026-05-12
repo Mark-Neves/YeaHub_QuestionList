@@ -1,27 +1,21 @@
-import './FilterSection_module.scss';
-import type { Filters } from '@/entity/specialization/model/type';
-import { complexity, normalizeDataFilter, parseIDs, rate } from '@/shared/helpers';
 import { useFilterSection } from '../model/useFilterSection';
-import Button from '@/shared/ui/Button';
 import FilterSearch from '@/features/filter-search';
 import FilterList from '@/features/filter-question';
 import useUpdateUrl from '@/features/update-url';
+import ResetFilter from '@/features/filter-reset';
+import { normalizeDataFilter, parseIDs } from '@/shared/lib/normalize';
+import { complexity, DEFAULT_SPECIALIZATION_ID, rate } from '@/shared/lib/constants';
 
-type FilterSectionProps = {
-  filterClose: () => void;
-  filters: Filters;
-};
-export default function FilterSection({ filterClose, filters }: FilterSectionProps) {
-  const { resetFilter, updateFilter } = useUpdateUrl();
-  const { specializationsState, skillsState, hasActiveFilters } = useFilterSection(filters);
+export default function FilterSection() {
+  const { params, resetFilter, updateFilter } = useUpdateUrl();
+  const { specializationsState, skillsState, hasActiveFilters } = useFilterSection();
   return (
     <>
-      <Button className='button-close' onClick={filterClose} label={'x'} />
-      <FilterSearch text={filters.title} updateSearch={updateFilter} />
+      <FilterSearch text={params.title ?? ''} updateSearch={updateFilter} />
       <FilterList
         title={'Специализация'}
         body={specializationsState}
-        isActive={parseIDs(filters.specializationId)}
+        isActive={parseIDs(params.specializationId ?? String(DEFAULT_SPECIALIZATION_ID))}
         getLabel={(item) => (item ? item.title : '')}
         getValue={(item) => (item ? item.id : 0)}
         onSelect={(value) => updateFilter('specializationId', value)}
@@ -29,7 +23,7 @@ export default function FilterSection({ filterClose, filters }: FilterSectionPro
       <FilterList
         title={'Навыки'}
         body={skillsState}
-        isActive={parseIDs(filters.skills)}
+        isActive={parseIDs(params.skills)}
         getLabel={(item) => (item ? item.title : '')}
         getValue={(item) => (item ? item.id : 0)}
         onSelect={(value) => updateFilter('skills', value)}
@@ -37,7 +31,7 @@ export default function FilterSection({ filterClose, filters }: FilterSectionPro
       <FilterList
         title={'Уровень сложности'}
         body={normalizeDataFilter(complexity)}
-        isActive={parseIDs(filters.complexity)}
+        isActive={parseIDs(params.complexity)}
         getLabel={(item) => item.title}
         getValue={(item) => item.level}
         onSelect={(value) => updateFilter('complexity', value)}
@@ -45,14 +39,12 @@ export default function FilterSection({ filterClose, filters }: FilterSectionPro
       <FilterList
         title={'Рейтинг'}
         body={normalizeDataFilter(rate)}
-        isActive={parseIDs(filters.rate)}
+        isActive={parseIDs(params.rate)}
         getLabel={(item) => item.title}
         getValue={(item) => item.level}
         onSelect={(value) => updateFilter('rate', value)}
       />
-      {hasActiveFilters && (
-        <Button label='Очистить фильтры' className='clear_button' onClick={resetFilter} />
-      )}
+      <ResetFilter activeFilters={hasActiveFilters} resetHandler={resetFilter} />
     </>
   );
 }
